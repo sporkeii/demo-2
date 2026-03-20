@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT: BIRTHDAY PROTOCOL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="scanlines"></div>
+
+    <!-- Warning Screen -->
+    <div id="warning-screen" class="screen active">
+        <div class="warning-box">
+            <div class="warning-header">⚠ UMBRELLA CORPORATION SECURE TERMINAL ⚠</div>
+            <div class="warning-body">
+                <p class="glitch-text">UNAUTHORIZED ACCESS DETECTED</p>
+                <p>BIOMETRIC SCAN: <span class="text-green">AUTHORIZED</span></p>
+                <p>SUBJECT ID: <span class="text-red">BIRTHDAY_PROTOCOL_2024</span></p>
+                <p>STATUS: <span class="text-yellow">CONTAINMENT BREACH</span></p>
+                <div class="warning-message">
+                    <p>You wake up in a cold, dimly lit room.</p>
+                    <p>Your head throbs. The last thing you remember...</p>
+                    <p>A birthday party. Then darkness.</p>
+                    <p>Now you're here. Locked in a laboratory.</p>
+                    <p class="text-yellow">"SOLVE THE PUZZLES OR STAY INFECTED FOREVER."</p>
+                </div>
+                <button id="start-btn" class="terminal-btn">INITIALIZE SYSTEM</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div id="game-screen" class="screen">
+        <div class="game-container">
+            <div class="header">
+                <div class="header-left">
+                    <div class="location" id="location">LOCATION: LABORATORY - SECTOR 7</div>
+                    <div class="objective" id="objective">OBJECTIVE: Investigate your surroundings</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-label">ESCAPE PROGRESS:</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="progress-text" id="progress-text">0/5</div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="virus-container">
+                        <div class="virus-label">T-VIRUS EXPOSURE</div>
+                        <div class="virus-bar">
+                            <div class="virus-fill" id="virus-fill"></div>
+                        </div>
+                        <div class="virus-percent" id="virus-percent">0%</div>
+                        <div class="virus-status" id="virus-status">STABLE</div>
+                    </div>
+                    <div class="save-indicator">💾 <span id="save-text">Auto-Save</span></div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="left-panel">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span>SECURE TERMINAL v2.1.4</span>
+                            <span class="terminal-status" id="terminal-status">🔒 LOCKED</span>
+                            <span class="blink">█</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-output"></div>
+                        <div class="terminal-input-area">
+                            <span class="text-green">&gt;</span>
+                            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-panel">
+                    <div class="inventory-window">
+                        <div class="inventory-header">INVENTORY / CLUES</div>
+                        <div class="inventory-body" id="inventory">
+                            <div class="inventory-empty">NO ITEMS</div>
+                        </div>
+                    </div>
+
+                    <div class="puzzle-window" id="puzzle-window" style="display: none;">
+                        <div class="puzzle-header">
+                            <span id="puzzle-title">PUZZLE</span>
+                            <button class="close-btn" onclick="closePuzzle()">✕</button>
+                        </div>
+                        <div class="puzzle-body" id="puzzle-content"></div>
+                    </div>
+
+                    <div class="room-window">
+                        <div class="room-header">ROOM INTERACTIONS</div>
+                        <div class="room-body" id="room-interactions">
+                            <button class="interact-btn" id="desk-btn" onclick="interactDesk()">🖥️ Examine Desk</button>
+                            <button class="interact-btn" id="door-btn" onclick="interactDoor()">🚪 Check Door</button>
+                            <button class="interact-btn" id="cabinet-btn" onclick="interactCabinet()">🗄️ Search Cabinet</button>
+                            <button class="interact-btn" id="floor-btn" onclick="interactFloor()">🔍 Inspect Floor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <button class="action-btn" onclick="showHelp()"><span class="key-hint">[H]</span> HELP</button>
+                <button class="action-btn" onclick="saveGame()"><span class="key-hint">[S]</span> SAVE</button>
+                <button class="action-btn" onclick="showHints()"><span class="key-hint">[?]</span> HINTS (<span id="hint-count">3</span>)</button>
+                <button class="action-btn" onclick="toggleInventory()"><span class="key-hint">[I]</span> INVENTORY (<span id="item-count">0</span>)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Victory Screen -->
+    <div id="victory-screen" class="screen">
+        <div class="victory-container">
+            <div class="victory-header glitch-text">CONTAINMENT BREACH NEUTRALIZED</div>
+            <div class="victory-stats">
+                <div class="stat">Virus Level: <span id="final-virus">0%</span></div>
+                <div class="stat">Time: <span id="time-survived">00:00</span></div>
+                <div class="stat">Hints Used: <span id="hints-used">0</span></div>
+            </div>
+            <div class="victory-body">
+                <div class="birthday-message">
+                    <h1 class="text-green typewriter">HAPPY BIRTHDAY!</h1>
+                    <div class="message-content">
+                        <p class="text-yellow">TRANSMISSION DECRYPTED...</p>
+                        <br>
+                        <p class="personal-message">
+                            Dear Birthday Survivor,<br><br>
+                            You've successfully escaped the laboratory! 🎉<br><br>
+                            May your year ahead be filled with adventures, mysteries, and save points 
+                            at exactly the right moments.<br><br>
+                            <span class="text-yellow">- From your favorite puzzle-maker</span>
+                        </p>
+                        <br>
+                        <div class="gift-section">
+                            <div class="gift-label">🎁 DIGITAL GIFT UNLOCKED 🎁</div>
+                            <p class="text-green">Your prize: A year of unforgettable memories!</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="terminal-btn" onclick="location.reload()">PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="glitch-overlay" id="glitch-overlay"></div>
+    <div id="notification" class="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
