@@ -164,23 +164,23 @@ function initGame() {
 <span class="text-red">║   SYSTEM BOOT - BIRTHDAY PROTOCOL v2.4    ║</span>
 <span class="text-red">╚════════════════════════════════════════════╝</span>
 
-<p class="text-yellow">Initializing biometric scanner...</p>
-<p class="text-green">✓ Identity confirmed</p>
-<p class="text-yellow">Loading containment protocols...</p>
-<p class="text-red">⚠ WARNING: T-Virus detected in subject</p>
-<p class="text-dim">Infection rate: Accelerating</p>
+<p class="text-yellow">Initializing biometric scanner...</p> <br>
+<p class="text-green">✓ Identity confirmed</p> <br>
+<p class="text-yellow">Loading containment protocols...</p> <br>
+<p class="text-red">⚠ WARNING: T-Virus detected in subject</p> <br>
+<p class="text-dim">Infection rate: Accelerating</p> <br>
 
-<p>You look around the sterile laboratory.</p>
-<p>The room is small, maybe 15x15 feet.</p>
-<p>There's a desk with this terminal, a locked door,</p>
-<p>a filing cabinet, and various equipment scattered about.</p>
+<p>You look around the sterile laboratory.</p> <br>
+<p>The room is small, maybe 15x15 feet.</p> <br>
+<p>There's a desk with this terminal, a locked door,</p> <br>
+<p>a filing cabinet, and various equipment scattered about.</p> <br>
 
-<p class="text-yellow">The terminal screen blinks a message:</p>
-<p class="text-green">"To escape, you must solve the mysteries hidden here."</p>
+<p class="text-yellow">The terminal screen blinks a message:</p> <br>
+<p class="text-green">"To escape, you must solve the mysteries hidden here."</p> <br>
 
-<p class="text-dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
-<p class="text-yellow">OBJECTIVE: Explore the room using the interaction buttons →</p>
-<p class="text-dim">The terminal is currently LOCKED. You need to find a way in...</p>
+<p class="text-dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p> <br>
+<p class="text-yellow">OBJECTIVE: Explore the room using the interaction buttons →</p> <br>
+<p class="text-dim">The terminal is currently LOCKED. You need to find a way in...</p> <br>
     `);
     
     updateObjective('Search the room for clues');
@@ -204,17 +204,17 @@ function interactDesk() {
     gameState.deskExamined = true;
     btn.classList.add('completed');
     
-    printToTerminal(`
-<p class="text-yellow">&gt; EXAMINING DESK...</p>
-<p>You carefully search the desk drawers.</p>
-<p>Most are empty, but one drawer is jammed.</p>
-<p>You pull harder...</p>
-<p class="text-green">CRACK!</p>
-<p>The drawer opens. Inside you find:</p>
-<p class="text-yellow">→ A dusty journal with torn pages</p>
-<p class="text-yellow">→ Some scattered research notes</p>
+    printToTerminal(` 
+<p class="text-yellow">&gt; EXAMINING DESK...</p> <br>
+<p>You carefully search the desk drawers.</p> <br>
+<p>Most are empty, but one drawer is jammed.</p> <br>
+<p>You pull harder...</p> <br>
+<p class="text-green">CRACK!</p> <br>
+<p>The drawer opens. Inside you find:</p> <br>
+<p class="text-yellow">→ A dusty journal with torn pages</p> <br>
+<p class="text-yellow">→ Some scattered research notes</p> <br>
 
-<p class="text-dim">The journal might have clues... but you need terminal access to read files properly.</p>
+<p class="text-dim">The journal might have clues... but you need terminal access to read files properly.</p> <br>
     `);
     
     addToInventory('journal', 'Research Journal', 'A worn journal with cryptic entries. Might contain clues.');
@@ -244,11 +244,11 @@ function interactDoor() {
     btn.classList.add('completed');
     
     printToTerminal(`
-<p class="text-yellow">&gt; CHECKING DOOR...</p>
-<p>You approach the heavy metal door.</p>
-<p>It's sealed shut with an electronic lock.</p>
-<p>A small display reads: <span class="text-red">"CONTAINMENT ACTIVE"</span></p>
-<p>There's a keypad, but it's dark and unresponsive.</p>
+<p class="text-yellow">&gt; CHECKING DOOR...</p> <br>
+<p>You approach the heavy metal door.</p> <br>
+<p>It's sealed shut with an electronic lock.</p> <br>
+<p>A small display reads: <span class="text-red">"CONTAINMENT ACTIVE"</span></p> <br>
+<p>There's a keypad, but it's dark and unresponsive.</p> <br>
 
 <p class="text-dim">You'll need to solve the laboratory's puzzles to escape.</p>
     `);
@@ -280,15 +280,15 @@ function interactCabinet() {
     btn.classList.add('completed');
     
     printToTerminal(`
-<p class="text-yellow">&gt; SEARCHING CABINET...</p>
-<p>Using a paperclip from the desk, you pick the lock.</p>
-<p class="text-green">CLICK!</p>
-<p>Inside you find:</p>
-<p class="text-yellow">→ Lab Safety Protocols (useless)</p>
-<p class="text-yellow">→ Someone's lunch (very old)</p>
-<p class="text-yellow">→ A sticky note that says "PASSWORD HINT: Look at the DATES"</p>
+<p class="text-yellow">&gt; SEARCHING CABINET...</p> <br>
+<p>Using a paperclip from the desk, you pick the lock.</p> <br>
+<p class="text-green">CLICK!</p> <br>
+<p>Inside you find:</p> <br>
+<p class="text-yellow">→ Lab Safety Protocols (useless)</p> <br>
+<p class="text-yellow">→ Someone's lunch (very old)</p> <br>
+<p class="text-yellow">→ A sticky note that says "PASSWORD HINT: Look at the DATES"</p> <br>
 
-<p class="text-green">Added sticky note to inventory!</p>
+<p class="text-green">Added sticky note to inventory!</p> <br>
     `);
     
     addToInventory('sticky-note', 'Sticky Note', 'Says: "PASSWORD HINT: Look at the DATES"');
@@ -308,14 +308,14 @@ function interactFloor() {
     btn.classList.add('completed');
     
     printToTerminal(`
-<p class="text-yellow">&gt; INSPECTING FLOOR...</p>
-<p>You get on your hands and knees.</p>
-<p>Under a desk leg, you spot something metallic...</p>
-<p class="text-green">A SECURITY KEYCARD!</p>
-<p>It's slightly bent but looks functional.</p>
-<p>The card reads: <span class="text-yellow">"DR. WESKER - LEVEL 3 ACCESS"</span></p>
+<p class="text-yellow">&gt; INSPECTING FLOOR...</p> <br>
+<p>You get on your hands and knees.</p> <br>
+<p>Under a desk leg, you spot something metallic...</p> <br>
+<p class="text-green">A SECURITY KEYCARD!</p> <br>
+<p>It's slightly bent but looks functional.</p> <br>
+<p>The card reads: <span class="text-yellow">"DR. WESKER - LEVEL 3 ACCESS"</span></p> <br>
 
-<p class="text-green">✓ KEYCARD added to inventory!</p>
+<p class="text-green">✓ KEYCARD added to inventory!</p> 
 <p class="text-yellow">Maybe you can use this on the terminal...</p>
     `);
     
@@ -379,28 +379,28 @@ function commandHelp() {
     return `
 <span class="text-yellow">═══════════ AVAILABLE COMMANDS ═══════════</span>
 
-<span class="text-green">BASIC:</span>
-  help          - Show this help menu
-  status        - Show your current progress
-  clear         - Clear terminal screen
+<span class="text-green">BASIC:</span> <br>
+  help          - Show this help menu <br>
+  status        - Show your current progress <br>
+  clear         - Clear terminal screen <br>
   
-<span class="text-green">FILES:</span>
-  ls            - List available files
-  read [file]   - Read a file (e.g., read log.txt)
+<span class="text-green">FILES:</span> <br>
+  ls            - List available files <br>
+  read [file]   - Read a file (e.g., read log.txt) <br>
   
-<span class="text-green">ITEMS:</span>
-  inventory     - Show your items
-  use [item]    - Use an item from inventory
+<span class="text-green">ITEMS:</span> <br>
+  inventory     - Show your items <br>
+  use [item]    - Use an item from inventory <br>
   
-<span class="text-green">PUZZLES:</span>
-  solve [name]  - Start a puzzle (password, cipher)
+<span class="text-green">PUZZLES:</span> <br>
+  solve [name]  - Start a puzzle (password, cipher) <br>
 
-<span class="text-yellow">TIPS:</span>
-  • Explore the room using the interaction buttons
-  • Read files carefully for clues
-  • Items can be combined or used
-  • The virus meter is increasing...
-  • Save your progress often!
+<span class="text-yellow">TIPS:</span> <br>
+  • Explore the room using the interaction buttons <br>
+  • Read files carefully for clues <br>
+  • Items can be combined or used <br>
+  • The virus meter is increasing... <br>
+  • Save your progress often! <br>
     `;
 }
 
@@ -521,38 +521,38 @@ function readFile(filename) {
         'welcome.txt': `
 <span class="text-green">╔══════════════════════════════════════╗</span>
 <span class="text-green">║   WELCOME TO YOUR BIRTHDAY ESCAPE    ║</span>
-<span class="text-green">╚══════════════════════════════════════╝</span>
+<span class="text-green">╚══════════════════════════════════════╝</span> <br>
 
-Dear Subject,
+Dear Subject, <br>
 
-You've been infected with the T-Virus.
-The only cure? Solving the puzzles in this lab.
+You've been infected with the T-Virus. <br>
+The only cure? Solving the puzzles in this lab. <br>
 
-Your survival depends on your wits.
-Search the room. Find the clues.
-Unlock the terminal. Solve the mysteries.
+Your survival depends on your wits. <br>
+Search the room. Find the clues. <br>
+Unlock the terminal. Solve the mysteries. <br>
 
-The clock is ticking. The virus is spreading.
+The clock is ticking. The virus is spreading. <br>
 
-Good luck.
+Good luck. <br>
 
-<span class="text-dim">- Dr. W.</span>
+<span class="text-dim">- Dr. W.</span> <br>
         `,
         
         'system_log.txt': `
-<span class="text-yellow">SYSTEM LOG - SECTOR 7 LABORATORY</span>
+<span class="text-yellow">SYSTEM LOG - SECTOR 7 LABORATORY</span> <br>
 ═══════════════════════════════════════
 
-[08:47] System boot complete
-[09:12] Dr. Wesker logged in
-[09:45] Experiment #471 initiated
-[10:30] Subject shows unusual resistance
-[11:15] Dr. Wesker logged out
-[11:47] EMERGENCY: Containment breach detected
-[12:00] Automatic lockdown engaged
-[12:15] T-Virus exposure detected
+[08:47] System boot complete <br>
+[09:12] Dr. Wesker logged in <br>
+[09:45] Experiment #471 initiated <br>
+[10:30] Subject shows unusual resistance <br>
+[11:15] Dr. Wesker logged out <br>
+[11:47] EMERGENCY: Containment breach detected <br>
+[12:00] Automatic lockdown engaged <br> 
+[12:15] T-Virus exposure detected <br>
 
-<span class="text-red">CURRENT STATUS: CONTAINMENT ACTIVE</span>
+<span class="text-red">CURRENT STATUS: CONTAINMENT ACTIVE</span> <br>
 <span class="text-yellow">NOTE: Password required for Level 4 access</span>
         `,
         
@@ -560,75 +560,75 @@ Good luck.
 <span class="text-yellow">DR. WESKER'S RESEARCH NOTES</span>
 ═══════════════════════════════════════
 
-<span class="text-dim">These notes are scattered and hard to read...</span>
+<span class="text-dim">These notes are scattered and hard to read...</span> <br>
 
-"...experiment showing promising results..."
-"...Day 29 - mutation accelerating..."
-"...Day 25 - need to adjust dosage..."
-"...Day 18 - subject remarkably stable..."
-"...Day 04 - initial injection successful..."
+"...experiment showing promising results..." <br>
+"...Day 29 - mutation accelerating..." <br>
+"...Day 25 - need to adjust dosage..." <br>
+"...Day 18 - subject remarkably stable..." <br>
+"...Day 04 - initial injection successful..." <br>
 
-<span class="text-green">IMPORTANT NOTE:</span>
-Password hint: The most significant days,
-in descending order, first four digits.
+<span class="text-green">IMPORTANT NOTE:</span> <br>
+Password hint: The most significant days, <br>
+in descending order, first four digits. <br>
 
-<span class="text-dim">What could that mean?</span>
+<span class="text-dim">What could that mean?</span> <br>
         `,
         
         'lab_experiment.txt': `
-<span class="text-yellow">EXPERIMENT LOG #471</span>
-═══════════════════════════════════════
+<span class="text-yellow">EXPERIMENT LOG #471</span> <br>
+═══════════════════════════════════════ <br>
 
-Subject: Birthday Protocol Test Subject
-Virus Strain: T-Virus (Modified)
-Objective: Test cognitive function under stress
+Subject: Birthday Protocol Test Subject  <br>
+Virus Strain: T-Virus (Modified) <br>
+Objective: Test cognitive function under stress <br>
 
-<span class="text-green">EXPERIMENT PARAMETERS:</span>
-- Subject must solve sequential puzzles
-- Virus simulation increases pressure
-- Success = escape and birthday gift
-- Failure = ...well, let's not think about that
+<span class="text-green">EXPERIMENT PARAMETERS:</span> <br>
+- Subject must solve sequential puzzles <br>
+- Virus simulation increases pressure <br>
+- Success = escape and birthday gift <br>
+- Failure = ...well, let's not think about that <br>
 
-<span class="text-red">WARNING:</span> The password is hidden in the
+<span class="text-red">WARNING:</span> The password is hidden in the <br>
 research notes. Look for the pattern in the days.
 
-<span class="text-dim">Hint: 29, 25, 18, 04... what order?</span>
+<span class="text-dim">Hint: 29, 25, 18, 04... what order?</span> <br>
         `,
         
         'encrypted_message.dat': `
 <span class="text-red">╔════════════════════════════════════╗</span>
 <span class="text-red">║  ENCRYPTED MESSAGE - DECRYPTING   ║</span>
-<span class="text-red">╚════════════════════════════════════╝</span>
+<span class="text-red">╚════════════════════════════════════╝</span> <br>
 
-<span class="text-green">✓ PASSWORD ACCEPTED - DECRYPTION COMPLETE</span>
+<span class="text-green">✓ PASSWORD ACCEPTED - DECRYPTION COMPLETE</span><br>
 
-Congratulations! You've proven your worth.
-But there's one final test...
+Congratulations! You've proven your worth. <br>
+But there's one final test... <br>
 
-The birthday vault contains your gift.
-To open it, you must decode the cipher.
+The birthday vault contains your gift. <br>
+To open it, you must decode the cipher. <br>
 
-Type 'solve cipher' when you're ready.
+Type 'solve cipher' when you're ready.<br>
 
-The final piece of the puzzle awaits...
+The final piece of the puzzle awaits... <br>
 
 <span class="text-yellow">P.S. - You're doing great! Almost there!</span>
         `,
         
         'final_protocol.txt': `
-<span class="text-yellow">FINAL BIRTHDAY PROTOCOL</span>
-═══════════════════════════════════════
+<span class="text-yellow">FINAL BIRTHDAY PROTOCOL</span> <br>
+═══════════════════════════════════════ <br>
+ 
+This is it. The last puzzle. <br>
 
-This is it. The last puzzle.
+The cipher is a simple letter-to-number code. <br>
+A=1, B=2, C=3, and so on... <br>
 
-The cipher is a simple letter-to-number code.
-A=1, B=2, C=3, and so on...
+Decode the numbers to reveal the word. <br>
+The word is something you should be today. <br>
 
-Decode the numbers to reveal the word.
-The word is something you should be today.
-
-Once you solve it, the vault opens.
-Your birthday gift awaits.
+Once you solve it, the vault opens. <br>
+Your birthday gift awaits. <br>
 
 <span class="text-green">Good luck, birthday survivor!</span>
         `
@@ -663,7 +663,7 @@ function showPasswordPuzzle() {
     
     puzzleTitle.textContent = 'FACILITY PASSWORD LOCK';
     puzzleContent.innerHTML = `
-        <p class="text-yellow">Enter the 4-digit facility password:</p>
+        <p class="text-yellow">Enter the 4-digit facility password:</p> 
         <p class="text-dim">Hint: Check the research notes for day numbers</p>
         <p class="text-dim">Remember: "Most significant days, descending order, first four digits"</p>
         <br>
@@ -696,10 +696,10 @@ function checkPassword() {
             printToTerminal(`
 <p class="text-green">╔════════════════════════════════════╗</p>
 <p class="text-green">║  PASSWORD ACCEPTED - LEVEL 4 ACCESS  ║</p>
-<p class="text-green">╚════════════════════════════════════╝</p>
+<p class="text-green">╚════════════════════════════════════╝</p> <br>
 
-<span class="text-yellow">New files unlocked!</span>
-Type 'ls' to see them, then read 'encrypted_message.dat'
+<span class="text-yellow">New files unlocked!</span><br>
+Type 'ls' to see them, then read 'encrypted_message.dat' <br>
             `);
             updateObjective('Read the encrypted files and prepare for the final puzzle');
             showNotification('PASSWORD SOLVED! New files available!');
@@ -809,17 +809,17 @@ function unlockTerminal() {
     return `
 <p class="text-green">╔════════════════════════════════════╗</p>
 <p class="text-green">║  KEYCARD ACCEPTED - ACCESS GRANTED ║</p>
-<p class="text-green">╚════════════════════════════════════╝</p>
+<p class="text-green">╚════════════════════════════════════╝</p> <br>
 
-<span class="text-yellow">✓ Terminal unlocked!</span>
-<span class="text-yellow">✓ Command input enabled</span>
-<span class="text-yellow">✓ File system accessible</span>
+<span class="text-yellow">✓ Terminal unlocked!</span> <br>
+<span class="text-yellow">✓ Command input enabled</span> <br>
+<span class="text-yellow">✓ File system accessible</span> <br>
 
-Type 'help' to see available commands.
-Type 'ls' to list files.
-Type 'read [filename]' to read files.
+Type 'help' to see available commands. <br>
+Type 'ls' to list files. <br>
+Type 'read [filename]' to read files. <br>
 
-<span class="text-dim">Your first goal: Find the facility password...</span>
+<span class="text-dim">Your first goal: Find the facility password...</span> <br>
     `;
 }
 
@@ -935,12 +935,12 @@ function showFakeDeathScreen() {
     printToTerminal(`
 <span class="text-red">╔═══════════════════════════════════════╗</span>
 <span class="text-red">║   SYSTEM FAILURE - VIRUS AT 100%     ║</span>
-<span class="text-red">╚═══════════════════════════════════════╝</span>
+<span class="text-red">╚═══════════════════════════════════════╝</span> <br>
 
-<span class="text-red">T-VIRUS INFECTION: COMPLETE</span>
+<span class="text-red">T-VIRUS INFECTION: COMPLETE</span> <br>
 
-Just kidding! This is a birthday game, not a tragedy.
-But you should probably solve those puzzles faster! 😉
+GIGGLE!! ts a bday gift bro.. NOT A HORROR GAME!!
+but you should probably solve those puzzles faster.. slow ahh💔
 
 <span class="text-yellow">Virus level reset to 60%. Keep going!</span>
     `);
